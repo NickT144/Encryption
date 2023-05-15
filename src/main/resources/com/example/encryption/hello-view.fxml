@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="500.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.encryption.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Simple Text File Encryptor">
+      <font>
+         <Font size="24.0" />
+      </font>
+   </Text>
+   <TextField fx:id="KeyText" alignment="CENTER" prefHeight="43.0" prefWidth="460.0" promptText="Enter Key" />
+
+    <Label fx:id="welcomeText" />
+   <TilePane alignment="CENTER" prefHeight="58.0" prefWidth="260.0">
+      <children>
+         <HBox alignment="CENTER" prefHeight="50.0" prefWidth="91.0">
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" onAction="#onEncryptClick" prefHeight="32.0" prefWidth="83.0" text="Encrypt" />
+            </children>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="50.0" prefWidth="91.0">
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" onAction="#onDecryptClick" prefHeight="32.0" prefWidth="83.0" text="Decrypt" />
+            </children>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="50.0" prefWidth="100.0">
+            <children>
+               <Button alignment="CENTER" mnemonicParsing="false" onAction="#onSaveKeyClick" prefHeight="32.0" prefWidth="83.0" text="Save Key" />
+            </children>
+         </HBox>
+      </children>
+   </TilePane>
+   <Label fx:id="Key" text="Key Chosen:" />
+   <Label fx:id="File" text="File Chosen:" />
+   <Label fx:id="FileDirect" text="Directory Chosen:" />
+   <TilePane alignment="CENTER" prefHeight="30.0" prefWidth="260.0">
+      <children>
+         <HBox alignment="TOP_RIGHT" prefHeight="20.0" prefWidth="91.0">
+            <children>
+               <Hyperlink onAction="#onImportClick" text="Import" />
+            </children>
+         </HBox>
+         <HBox prefHeight="20.0" prefWidth="91.0">
+            <children>
+               <Hyperlink onAction="#onExportClick" text="Export" />
+            </children>
+         </HBox>
+      </children>
+   </TilePane>
+</VBox>
