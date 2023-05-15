@@ -1,34 +1,30 @@
 package com.example.encryption;
 
-
+//imported libraries
 import java.util.ArrayList;
 
 public class EncryptDecrypt {
-private ArrayList<Character> text;
+private ArrayList<Character> text; //text to be encrypted/decrypted.
 
-public EncryptDecrypt(ArrayList<String> in){
+public EncryptDecrypt(ArrayList<Character> in){ //constructor that takes in the text that will be encrypted/decrypted
     text = in;
 }
-public ArrayList<String> encrypt(String key) {
-    ArrayList<Character> temp = text;
+public ArrayList<Character> encrypt(ArrayList<Character> in, String key) { //method encrypts and decrypts the text with a given key
+    ArrayList<Character> temp = in;
+    ArrayList<Character> encode = new ArrayList<Character>();
     int length = key.length();
-    ArrayList<String> encode = new ArrayList<String>();
-    for (int i = 0; i < text.size(); i++) {
-        encode.add( String.format("%02x",(byte) (temp.get(i) ^ key.charAt(i%length))));
 
-    }
-
-}
-
-    public ArrayList<String> decrypt( ArrayList<String> encrypt, String key) {
-
-        int length = key.length();
-        ArrayList<String> decode = new ArrayList<String>();
-        for (int i = 0; i < encrypt.size(); i++) {
-            decode.add("" + (char) (( Integer.parseInt(encrypt.get(i), 16) ^  key.charAt(i%length))));
+    for (int i = 0; i < temp.size(); i++) { //loops through text and encrypts/decrypts each character
+        encode.add((char) (in.get(i) ^ key.charAt(i%length))); //encrypts/decrypts each character using ^ (XOR) operator.
+        System.out.println((char) (in.get(i) ^ key.charAt(i%length)));
+        if(in.get(i) == 13){
+            encode.add('l');
         }
-        return decode;
+
+
     }
+    return encode;
+}
 
 
 }
