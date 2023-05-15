@@ -12,7 +12,7 @@ Install from GitHub repository.
 
 ### Executing program
 
-Download program and run in an IDE. The GUI will pop up. The user will have to import a text file and choose a destination directory first. Then, the user will provide a key and save it. Once saved, the user can choose to encrypt or decrypt the imported file. To restart the process, the user will be required to import a new file and choose a new directory.
+Download program and run in an IDE. The GUI will pop up. The user will have to import a text file and choose a destination directory first. Then, the user will provide a key and save it. Once saved, the user can choose to encrypt or decrypt the imported file. The saved file will show up in the given directory. To restart the process, the user will be required to import a new file and choose a new directory.
 ## Authors
  
    [Nicholas Tran](https://github.com/NickT144)
