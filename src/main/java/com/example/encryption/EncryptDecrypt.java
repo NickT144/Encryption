@@ -13,15 +13,8 @@ public ArrayList<Character> encrypt(ArrayList<Character> in, String key) { //met
     ArrayList<Character> temp = in;
     ArrayList<Character> encode = new ArrayList<Character>();
     int length = key.length();
-
     for (int i = 0; i < temp.size(); i++) { //loops through text and encrypts/decrypts each character
         encode.add((char) (in.get(i) ^ key.charAt(i%length))); //encrypts/decrypts each character using ^ (XOR) operator.
-        System.out.println((char) (in.get(i) ^ key.charAt(i%length)));
-        if(in.get(i) == 13){
-            encode.add('l');
-        }
-
-
     }
     return encode;
 }
